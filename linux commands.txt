@@ -1,0 +1,92 @@
+Welcome to the Linux wiki!
+
+Linux is a Operating system with open source where it is easy to download any package
+
+Command 		Utility
+ pwd 			Get the full path of the current working directory.
+ Cd			 - Navigate to the last directory you were working in.
+ cd 			~ or just cd Navigate to the current user's home directory. 
+cd ..			 Go to the parent directory of current directory (mind the space between cd and ..) Listing files inside a directory Command Utility
+ ls -l 			List the files and directories in the current directory in long (table) format (It is recommended to use -l with ls for better readability). 
+ls -ld dir-name 		List information about the directory dir-name instead of its contents. 
+ls -a			 List all the files including the hidden ones (File names starting with a . are hidden files in Linux). 
+ls -F 			Appends a symbol at the end of a file name to indicate its type (* means executable, / means directory, @ means symbolic link, = means socket, | means named pipe, > means door). 
+ls -lt 			List the files sorted by last modified time with most recently modified files showing at the top (remember -l option provides the long format which has better readability).
+ ls -lh			 List the file sizes in human readable format. 
+ls -lR 			Shows all subdirectories recursively. 
+tree 			Will generate a tree representation of the file system starting from the current directory. 
+
+cp -p source destination 	Will copy the file from source to destination. -p stands for preservation. It preserves the original attributes of file while copying like file owner, timestamp, group, permissions etc. 
+
+cp -R source_dir destination_dir 	Will copy source directory to specified destination recursively.
+ mv file1 file2 				In Linux there is no rename command as such. Hence mv moves/renames the file1 to file2.
+ rm -i filename 				Asks you before every file removal for confirmation. IF YOU ARE A NEW USER TO LINUX COMMAND LINE, YOU SHOULD ALWAYS USE rm -i. You can specify multiple files.
+ rm -R dir-name 		Will remove the directory dir-name recursively. 
+rm -rf dir-name			 Will remove the directory dir recursively, ignoring non-existent files and will never prompt for anything. BE CAREFUL USING THIS COMMAND! You can specify multiple directories.
+ rmdir dir-name 		Will remove the directory dir-name, if it's empty. This command can only remove empty directories.
+mkdir dir-name 			Create a directory dir-name.
+ mkdir -p dir-name/dir-name 		Create a directory hierarchy. Create parent directories as needed, if they don't exist. You can specify multiple directories. 
+touch filename				 Create a file filename, if it doesn't exist, otherwise change the timestamp of the file to current time. 
+
+chmod filename 		Change the file permissions. Specifications = u user, g group, o other, + add permission, - remove, r read, w write,x execute.
+ chmod -R dir name 		Change the permissions of a directory recursively. To change permission of a directory and everything within that directory, use this command.
+ chmod go=+r myfile 		Add read permission for the owner and the group. 
+chmod a +rwx myfile 		Allow all users to read, write or execute myfile.
+ chmod go -r myfile 		Remove read permission from the group and others. 
+chown owner1 filename	 Change ownership of a file to user owner1. 
+chgrp grp_owner filename	 Change primary group ownership of file filename to group grp_owner. 
+chgrp -R grp_owner dir-name 	Change primary group ownership of directory dir-name to group grp_owner recursively. To change group ownership of a directory and everything within that directory, use this command
+
+echo "Hello World" it prints Hello World
+
+man <name>	 Read the manual page of . 
+man<section><name> 		 Read the manual page of , related to the given section. 
+man -k <editor>			Output all the software whose man pages contain keyword. 
+man -K <keyword>			 Outputs all man pages containing within them. 
+apropos <editor>			Output all the applications whose one line description matches the word editor. When not able to recall the name of the application, use this command. 
+help 				In Bash shell, this will display the list of all available bash commands.
+ Help <name>   				In Bash shell, this will display the info about the bash command. 
+info <name> 			View all the information about . 
+dpkg -l 				Output a list of all installed packages on a Debian-based system.
+dpkg -L packageName  		 Will list out the files installed and path details for a given package on Debian. 
+
+dpkg -l | grep -i  <edit>		Return all .deb installed packages with irrespective of cases. 
+less /var/lib/dpkg/available		 Return descriptions of all available packages. 
+whatis vim				 List a one-line description of vim.
+<command-name>   --help 		Display usage information about the . Sometimes command -h also works, but not for all commands.
+hostname -f 			Displays Fully Qualified Domain Name (FQDN) of the system. 
+passwd 				Change password of current user. 
+whoami 			Username of the users logged in at the terminal. 
+who 				List of all the users currently logged in as a user.
+ w 				Display current system status, time, duration, list of users currently logged in on system and other user information.
+ last 				Who recently used the system.
+ last root 			When was the last time root logged in as user.
+ lastb 				Shows all bad login attempts into the system. 
+chmod 				Changing permissions - read,write,execute of a file or directory
+top				 List all processes sorted by their current system resource usage. Displays a continually updated display of processes (By default 3 seconds). Use q key to exit top.
+ ps 				List processes currently running on current shell session
+ ps -u 				root List all of the processes and commands root is running 
+ps aux				 List all the processes by all users on the current system	
+find /var/www -name           '*.css'
+
+touch myFile
+Rename myFile to myFirstFile:
+mv myFile myFirstFile
+View the contents of a file:
+cat myFirstFile
+View the content of a file with pager (one screenful at a time):
+less myFirstFile
+View the first several lines of a file:
+head myFirstFile
+View the last several lines of a file:
+tail myFirstFile
+Edit a file
+vi myFirstFile
+See what files are in your current working directory:
+ls
+Create an empty directory called myFirstDirectory:
+mkdir myFirstDirectory
+Create multi path directory: (creates two directories, src and myFirstDirectory)
+mkdir -p src/myFirstDirectory
+Move the file into the directory:
+mv myFirstFile myFirstDirectory/
